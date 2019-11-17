@@ -1,0 +1,22 @@
+{
+    "name": "jasminbektic/ottivo",
+    "description": "Console application",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jasmin Bektic",
+            "email": "jaskio89@gmail.com"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "^2.26"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ottivo\\": "src"
+        }
+    }
+}

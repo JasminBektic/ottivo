@@ -1,0 +1,20 @@
+#!/usr/bin/env php
+<?php
+
+include_once __DIR__ . "/../app/bootstrap.php";
+
+use Ottivo\Factory;
+use Ottivo\Helper\ConsoleView;
+
+
+$parameters = getopt("y:");
+
+if (empty($parameters)) {
+    ConsoleView::missingParametersOutput();
+    exit;
+}
+
+$employeeDao = Factory::getInstance()->getEmployeeDao();
+$employees = $employeeDao->fetchEmployees()->filterByContractYear($parameters['y']);
+
+ConsoleView::employeesOutput($employees);
